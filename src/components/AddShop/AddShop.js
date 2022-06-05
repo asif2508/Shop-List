@@ -106,7 +106,7 @@ const AddShop = () => {
         
     }
     return (
-        <div> 
+        <div className='pb-4'> 
             <Container>
                 <div className='w-50 mx-auto mt-5 text-start card-style add-shop'>
                     <h3 className='text-center'>Add a Shop</h3>
