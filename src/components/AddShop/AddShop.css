@@ -1,3 +1,6 @@
+.add-shop{
+    width: 50%;
+}
 .add-shop-btn{
     background-color: black;
     color: white;
@@ -13,4 +16,10 @@
     background-color: red;
     color: white;
     border: 1px solid red;
+}
+@media screen and (max-width: 576px) {
+    .add-shop{
+        width: 95%;
+    }
+    
 }

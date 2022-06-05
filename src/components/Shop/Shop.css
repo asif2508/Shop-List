@@ -7,3 +7,15 @@
     padding: 50px 0;
     background-size: cover;
 }
+.search-input-box{
+    width:60%;
+}
+@media screen and (max-width: 576px) {
+    .search-input-box{
+        width: 95%;
+    };
+    .search-input{
+        font-size: 14px;
+    }
+    
+}
