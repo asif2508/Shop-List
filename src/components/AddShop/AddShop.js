@@ -2,6 +2,8 @@ import React from 'react';
 import { Col, Container, Form } from 'react-bootstrap';
 import { useState } from 'react';
 import './AddShop.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const AddShop = () => {
     const [message, setMessage] = useState('');
 
@@ -71,7 +73,7 @@ const AddShop = () => {
 
         
         if(dates.compare(opening, closing) === 1 ){
-            console.log("hello world");
+            toast.error('Closing date should be after Opening date!');
             return;
         }
         const data ={
@@ -82,6 +84,24 @@ const AddShop = () => {
             closing: closing
         };
         console.log(data);
+        fetch(`http://localhost:5000/shops`,{
+            method: "POST",
+            headers:{
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data),
+        })
+        .then(res => {
+            if(res.ok){
+                toast.info('Shop Added Successfully');
+                return res.json()
+            }else{
+                return toast.error("Failed to add shop");
+            }
+        })
+        .then(data => console.log(data))
+        
+    event.target.reset();
 
         
     }
