@@ -18,7 +18,7 @@ const Shop = () => {
            <hr  className='w-75 mx-auto'/>
            <div>
                {
-                   shops.map(shop => <SingleShop 
+                   shops?.map(shop => <SingleShop 
                    shop={shop}
                    ></SingleShop>)
                }
