@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Foodmoji",
+        "catagory": "Grocery",
+        "location": "Pune",
+        "opening": "10/04/2022",
+        "closing": "14/06/2022"
+
+
+    },
+    {
+        "name": "Foster Sundry",
+        "catagory": "Butcher",
+        "location": "Mumbai Suburban",
+        "opening": "10/04/2022",
+        "closing": "12/09/2023"
+
+
+    },
+    {
+        "name": "Fever Pitch Pharmacy",
+        "catagory": "Chemist",
+        "location": "Mumbai Suburban",
+        "opening": "15/05/2022",
+        "closing": "10/12/2022"
+
+
+    },
+    {
+        "name": "Dear Grocery",
+        "catagory": "Grocery",
+        "location": "Nagpur",
+        "opening": "16/07/2022",
+        "closing": "12/10/2022"
+
+
+    },
+    {
+        "name": "Better Soon Pharmacy",
+        "catagory": "Chemist",
+        "location": "Pune",
+        "opening": "12/08/2022",
+        "closing": "10/12/2022"
+
+
+    },
+    {
+        "name": "Publican Quality Meats",
+        "catagory": "Butcher",
+        "location": "Nagpur",
+        "opening": "10/04/2022",
+        "closing": "10/08/2022"
+
+
+    },
+    {
+        "name": "Fresh Harvest",
+        "catagory": "Grocery",
+        "location": "Thane",
+        "opening": "10/03/2022",
+        "closing": "12/06/2022"
+
+
+    }
+]
