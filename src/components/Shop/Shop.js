@@ -2,18 +2,16 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import './Shop.css';
 import SingleShop from '../SingleShop/SingleShop';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import getAllShops from '../../states/actions/shopActions';
 const Shop = () => {
-    const {shops, isLoading, error} = useSelector(state => state);
+    const {shops} = useSelector(state => state);
     const [searchText, setSearchText ] = useState('');
     const [searchResult, setSearchResult] = useState([]);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getAllShops());
-    }, [shops])
+    }, [shops]);
     const handleSearch = event =>{
         const search = event.target.value;
         setSearchText(search.toLowerCase());
