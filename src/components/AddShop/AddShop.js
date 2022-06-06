@@ -4,43 +4,15 @@ import { useState } from 'react';
 import './AddShop.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import dates from '../../customFunctions/datesfunction';
 const AddShop = () => {
     const [message, setMessage] = useState('');
 
     const handleChange = event => {
-      const result = event.target.value.replace(/[^a-z]/gi, '');
+      const result = event.target.value.replace(/[^a-zA-Z\s]*$/gi, '');
   
       setMessage(result);
     };
-    var dates = {
-        convert:function(d) {
-            return (
-                d.constructor === Date ? d :
-                d.constructor === Array ? new Date(d[0],d[1],d[2]) :
-                d.constructor === Number ? new Date(d) :
-                d.constructor === String ? new Date(d) :
-                typeof d === "object" ? new Date(d.year,d.month,d.date) :
-                NaN
-            );
-        },
-        compare:function(a,b) {
-            return (
-                isFinite(a=this.convert(a).valueOf()) &&
-                isFinite(b=this.convert(b).valueOf()) ?
-                (a>b)-(a<b) :
-                NaN
-            );
-        },
-        inRange:function(d,start,end) {
-           return (
-                isFinite(d=this.convert(d).valueOf()) &&
-                isFinite(start=this.convert(start).valueOf()) &&
-                isFinite(end=this.convert(end).valueOf()) ?
-                start <= d && d <= end :
-                NaN
-            );
-        }
-    }
     const handleAddShop = event =>{
         event.preventDefault();
         const name = event.target.name.value;
@@ -80,7 +52,7 @@ const AddShop = () => {
         .then(data => console.log(data))
         
     event.target.reset();
-
+    setMessage('');
         
     }
     return (
@@ -91,11 +63,11 @@ const AddShop = () => {
                     <form onSubmit={handleAddShop}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Shop Name</Form.Label>
-                            <Form.Control name="name" type="name" placeholder="Enter Shop Name" value={message} onChange={handleChange}/>
+                            <Form.Control name="name" type="name" placeholder="Enter Shop Name" value={message} onChange={handleChange} required/>
                         </Form.Group>
                         <Form.Group className="mb-3" as={Col} controlId="formGridState">
                             <Form.Label>Shop Catagory</Form.Label>
-                            <Form.Select name='catagory' defaultValue="Choose...">
+                            <Form.Select name='catagory' defaultValue="Choose..." required>
                                 <option>Choose...</option>
                                 <option>Grocery</option>
                                 <option>Butcher</option>
@@ -106,25 +78,25 @@ const AddShop = () => {
                         </Form.Group>
                         <Form.Group className="mb-3" as={Col} controlId="formGridState">
                             <Form.Label>Shop Area</Form.Label>
-                            <Form.Select name='area' defaultValue="Choose...">
+                            <Form.Select name='area' defaultValue="Choose..." required>
                                 <option>Choose...</option>
-                                <option>Thane</option>
-                                <option>Pune</option>
-                                <option>Mumbai Suburban</option>
-                                <option>Nashik</option>
-                                <option>Nagpur</option>
-                                <option>Ahmednagar</option>
+                                <option>Thane, India</option>
+                                <option>Pune, India</option>
+                                <option>Mumbai Suburban, India</option>
+                                <option>Nashik, India</option>
+                                <option>Nagpur, India</option>
+                                <option>Ahmednagar, India</option>
                             </Form.Select>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Opening Date</Form.Label>
-                            <Form.Control name='opening' type="date" placeholder="Select an Opening Date" />
+                            <Form.Control name='opening' type="date" placeholder="Select an Opening Date" required/>
                             <Form.Text className="text-muted">
                             </Form.Text>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Closing date</Form.Label>
-                            <Form.Control name='closing' type="date" placeholder="Select a Closing date"/>
+                            <Form.Control name='closing' type="date" placeholder="Select a Closing date" required/>
                             <Form.Text className="text-muted">
                             </Form.Text>
                         </Form.Group>

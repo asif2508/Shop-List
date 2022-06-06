@@ -33,7 +33,7 @@ const Shop = () => {
             <h1 className="">Find The Best Shops</h1>
           </div>
           <div className="input-group mb-3 mx-auto mt-3 mb-3 search-input-box">
-              <input onChange={handleSearch} className='search-input form-control' type="text" placeholder={`Search By Name, Area or dates `} value={searchText} id="search-input" />
+              <input onChange={handleSearch} className='search-input form-control' type="text" placeholder={`Search By Name, Area or Dates `} value={searchText} id="search-input" />
           </div>
         </div>
             <div>
