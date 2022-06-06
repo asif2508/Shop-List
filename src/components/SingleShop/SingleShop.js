@@ -9,7 +9,7 @@ const SingleShop = ({ shop }) => {
     let today = new Date().toISOString().slice(0, 10);
 
     const handleDeleteShop = () => {
-        fetch(`http://localhost:5000/shops/${_id}`, {
+        fetch(`https://aqueous-beach-92885.herokuapp.com/shops/${_id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

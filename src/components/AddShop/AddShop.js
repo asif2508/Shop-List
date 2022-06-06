@@ -34,7 +34,7 @@ const AddShop = () => {
             closing: closing
         };
         console.log(data);
-        fetch(`http://localhost:5000/shops`,{
+        fetch(`https://aqueous-beach-92885.herokuapp.com/shops`,{
             method: "POST",
             headers:{
                 'content-type': 'application/json'

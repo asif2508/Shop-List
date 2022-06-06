@@ -2,7 +2,7 @@ import { GET_SHOPS_FAILED, GET_SHOPS_REQUEST, GET_SHOPS_SUCCESS } from "../const
 
 const getAllShops = () => async (dispatch) =>{
     dispatch({type: GET_SHOPS_REQUEST});
-    fetch('http://localhost:5000/shops')
+    fetch('https://aqueous-beach-92885.herokuapp.com/shops')
     .then(res => {
         if(res.ok){
             return res.json();
